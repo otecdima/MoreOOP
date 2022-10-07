@@ -19,5 +19,11 @@ public class Character {
         this.hp = Math.max(hp, 0);
     }
 
-
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + "{" +
+                "hp=" + hp +
+                ", power=" + power +
+                '}';
+    }
 }
