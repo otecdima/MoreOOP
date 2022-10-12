@@ -32,7 +32,7 @@ public class GameManager {
         System.out.println();
 
         while (chr1.isAlive() && chr2.isAlive()) {
-            System.out.println(chr1.getClass().getSimpleName() + " fight with " + chr2.getClass().getSimpleName());
+            System.out.println(chr1.getClass().getSimpleName() + " kicks " + chr2.getClass().getSimpleName());
             chr1.kick(chr2);
             System.out.println("Statistic after the " + chr1.getClass().getSimpleName() + " kicked " + chr2.getClass().getSimpleName() + ":");
             System.out.println("    " + chr1.getClass().getSimpleName() + " with " + chr1.getHp() + " of hp and " + chr1.getPower() + " of power ");
@@ -41,12 +41,17 @@ public class GameManager {
             if (!chr2.isAlive()) {
                 break;
             }
-            System.out.println("second beats fist");
+            System.out.println(chr2.getClass().getSimpleName() + " kicks " + chr1.getClass().getSimpleName());
             chr2.kick(chr1);
             System.out.println("Statistic after the " + chr2.getClass().getSimpleName() + " kicked " + chr1.getClass().getSimpleName() + ":");
             System.out.println("    " + chr1.getClass().getSimpleName() + " with " + chr1.getHp() + " of hp and " + chr1.getPower() + " of power ");
             System.out.println("    " + chr2.getClass().getSimpleName() + " with " + chr2.getHp() + " of hp and " + chr2.getPower() + " of power ");
             System.out.println();
+        }
+        if (chr1.isAlive() && !chr2.isAlive()) {
+            System.out.println("The player 1, " + chr1.getClass().getSimpleName() + " wins");
+        } else if (!chr1.isAlive() && chr2.isAlive()) {
+            System.out.println("The player 2, " + chr2.getClass().getSimpleName() + " wins");
         }
     }
 }
