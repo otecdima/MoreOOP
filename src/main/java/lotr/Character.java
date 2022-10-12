@@ -1,5 +1,6 @@
 package lotr;
 
+import kick.BasicKick;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,13 +11,14 @@ public class Character {
     private int hp;
     @Getter@Setter
     private int power;
+    private BasicKick kickFight;
 
     boolean isAlive() {
         return this.getHp() > 0;
     }
 
-    public void kick(Character c) {
-        System.out.println("kick");
+    public void kick(Character whoIsKicked) {
+        this.kickFight.kick(this, whoIsKicked);
     }
 
     public void setHp(int hp) {
