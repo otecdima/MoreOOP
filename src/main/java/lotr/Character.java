@@ -11,8 +11,12 @@ public class Character {
     @Getter@Setter
     private int power;
 
+    boolean isAlive() {
+        return this.getHp() > 0;
+    }
+
     public void kick(Character c) {
-        System.out.println("wbfbeu");
+        System.out.println("kick");
     }
 
     public void setHp(int hp) {
